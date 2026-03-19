@@ -2,31 +2,33 @@ package primeiroprojeto;
 
 
 import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class projetodatas {
 
 	public static void main(String[] args) {
 		
+		mostrardata();
+		}
+		
+		public static void mostrardata() {
+		
 		Calendar hoje = Calendar.getInstance();
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("EEEE", new Locale("pt", "BR"));
+		SimpleDateFormat sdf1 = new SimpleDateFormat("MMMM", new Locale("pt", "BR"));
+		
+		String diadasemana = sdf.format(hoje.getTime());
 		int dia = hoje.get(Calendar.DAY_OF_MONTH);
-		int mes = hoje.get(Calendar.MONTH);
+		String mes = sdf1.format(hoje.getTime());
 		int ano = hoje.get(Calendar.YEAR);
-		
-		mes ++; // o mês começa em 0 - janeiro		
-		
-		String data = dia + "/" + mes + "/" + ano;
-		System.out.println("A data de hoje é : " + data);
-
 		int hora = hoje.get(Calendar.HOUR_OF_DAY);
 		int minutos = hoje.get(Calendar.MINUTE);
 		
-		String agora = hora + ":" + minutos;
-		System.out.println("Agora: " + agora);
-		// ou então
-		System.out.printf("Hoje é " + dia +"," + mes + "ano" +ano+ "e agora são" +hora+ " horas e" + minutos);
-		
+		String data = "hoje é " + diadasemana + " dia " + dia + " de " + mes + " de " + ano + " e agora são " + hora + " horas e " + minutos + " minutos ";
+		System.out.println( data);
 
-
+	
 	}
 }
