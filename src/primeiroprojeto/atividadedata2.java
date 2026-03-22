@@ -6,9 +6,10 @@ import java.time.Period;
 public class atividadedata2 {
 	
 	public static void main(String[] args) {
-		contaTempo( 04, 01,2027 );
+		
+		contaTempo( 4, 1,2027 );
 	}
-	private static void contaTempo(int dia, int mes, int ano) {
+	     private static void contaTempo(int dia, int mes, int ano) {
 		
 		LocalDate agora = LocalDate.now();
 		LocalDate segundaData = LocalDate.of(ano, mes, dia);
